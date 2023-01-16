@@ -116,7 +116,6 @@ class seqRNN(nn.Module):
             r_output = r_output[:,-1,:]
             drop_out = self.dropout(r_output)
             drop_out = drop_out.contiguous().view(-1, self.n_hidden*self.D)
-        print(drop_out.shape)
         # put x through the fully-connected layer, we get scores out
         out1 = self.fc1(drop_out)
 

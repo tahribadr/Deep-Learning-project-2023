@@ -43,7 +43,7 @@ def tune_model_grid(dict, max_len,
                               net) ) 
 
     # pick the tuple in tune_results that has the lowest validation loss
-    best_model = max(tune_results, key=lambda t:t[0])
+    best_model = min(tune_results, key=lambda t:t[0])
     
     print(f"best model with validation loss {best_model[0]}\n"
           f"has learning rate: {best_model[1]}\n"

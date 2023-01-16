@@ -45,7 +45,7 @@ def train_model(
 
    
     criterion = torch.nn.NLLLoss()
-    optimizer = torch.optim.RMSprop(net.parameters(), lr=lr)
+    optimizer = torch.optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
 
 
     counter = 0
